@@ -85,6 +85,9 @@ To learn more about this dataset run `help(Davis, package = "carData")`.
 ```{r}
 library(tibble)
 glimpse(Davis)
+##there are also miscellaneous packages put together by Frank Harrell -> library(Hmisc) it masks dplyr ->src & summarize functions
+##there is a psychology package -> library(psych)
+##
 ```
 
 ## Compute BMI from measured `height` and `weight`
@@ -147,7 +150,7 @@ So, we'll use the `filter()` function also from `dplyr` package.
 ```{r}
 Davis3 <- Davis2 %>%
   filter(bmi < 50)
-
+##This is the way to do density easily using ggpubr->ggdensity
 ggdensity(Davis3, x = "bmi",
    add = "mean", rug = TRUE,
    color = "sex", fill = "sex",
